@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="TestBokk1.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="_connectionString" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">SERVER = DESKTOP-MG63D0P\SQLEXPRESS; Database = BookOne; User Id = User1; Password=User1</Value>
+    </Setting>
+    <Setting Name="_connectionStringWeb" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Data Source=den1.mssql8.gear.host;Initial Catalog=mybooks;Persist Security Info=True;User ID=mybooks;Password=kalhspera1@</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
