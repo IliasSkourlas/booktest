@@ -39,12 +39,24 @@ namespace TestBokk1.Controllers
 
 
 
-        //        .. /Employee/AddOrEdit  -insert
-        //        .. /Employee/AddOrEdit/id
+        //        .. /Book/AddOrEdit  -insert
+        //        .. /Book/AddOrEdit/id
         [HttpGet]
         public ActionResult AddOrEdit(int id = 0)
         {
-            return View();
+            if (id == 0)
+            {
+                return View();
+            }
+               
+            else
+            {
+                DynamicParameters param = new DynamicParameters();
+                param.Add("@BookID", id);
+
+                return View(BookOneDB.ReturnList<Book>("sp_BookViewById",param).FirstOrDefault<Book>());
+            }
+            
         }
 
 
@@ -53,6 +65,7 @@ namespace TestBokk1.Controllers
         public ActionResult AddOrEdit(Book book)
         {
             DynamicParameters param = new DynamicParameters();
+            param.Add("@BookID", book.BookID);
             param.Add("@Title", book.Title);
             param.Add("@Author",book.Author);
             param.Add("@DateOfLastMove",book.DateOfLastMove);
@@ -63,9 +76,17 @@ namespace TestBokk1.Controllers
             param.Add("@Circulation",book.Circulation);
             param.Add("@Sent",book.Sent);
             param.Add("@Receive",book.Receive);
-            BookOneDB.ExecuteWithoutReturn("sp_EnterBook", param);
+            BookOneDB.ExecuteWithoutReturn("sp_BookAddOrEdit", param);
             return RedirectToAction("Index");
         }
 
+        public ActionResult Delete (int id)
+        {
+            DynamicParameters param = new DynamicParameters();
+            param.Add("@BookID", id);
+            BookOneDB.ExecuteWithoutReturn("sp_DeleteFromBookByBookID", param);
+            return RedirectToAction("Index");
+
+        }
     }
 }

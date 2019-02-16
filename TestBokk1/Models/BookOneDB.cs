@@ -15,7 +15,7 @@ namespace TestBokk1.Models //Why the interface here
     {
 
 
-        private static string _connectionString = Properties.Settings.Default._connectionStringWeb;
+        private static string _connectionString = Properties.Settings.Default._connectionString;
         //public string RunOnConnectionError { get; private set; }
 
 
@@ -58,6 +58,17 @@ namespace TestBokk1.Models //Why the interface here
             {
                 sqlCon.Open();
                 sqlCon.Execute(procedureName, param, commandType: CommandType.StoredProcedure);
+            }
+
+        }
+
+        //BookOneDB.ExecuteReturnScalar<int>(_,_);
+        public static T ExecuteReturnScalar<T>(string procedureName, DynamicParameters param = null)
+        {
+            using (SqlConnection sqlCon = new SqlConnection(_connectionString))
+            {
+                sqlCon.Open();
+                return (T)Convert.ChangeType(sqlCon.ExecuteScalar(procedureName, param, commandType: CommandType.StoredProcedure), typeof(T));
             }
 
         }
