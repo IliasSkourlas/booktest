@@ -10,8 +10,7 @@ namespace TestBokk1.Models
         public int BookID { get; set; }
         public string Title { get; set; }
         public string Author { get; set; }
-        public DateTime DateOfLastMove { get; set; }
-        public string InscriptionMessage { get; set; }
+        public DateTime DateOfLastMove { get; set; }       
         public string Words { get; set; }
         public int OwnerLoginID { get; set; }
         public int CarrierLoginID { get; set; }
