@@ -11,27 +11,6 @@ namespace TestBokk1.Controllers
     public class BookController : Controller
     {
 
-        // GET: Book
-        //public ActionResult Index()
-        //{
-        //    var db = new BookOneDB();
-
-        //    var books = db.GetBooks();
-
-        //    return View(books.ToList());
-        //}
-
-
-
-        //public ActionResult Edit()
-        //{
-        //    var db = new BookOneDB();
-
-
-        //    return View();
-        //}
-
-
         public ActionResult Index()
         {
             return View(BookOneDB.ReturnList<Book>("sp_GetInfoAllBooks"));

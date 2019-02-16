@@ -1,0 +1,68 @@
+﻿@model IEnumerable<TestBokk1.Models.User>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Users</h2>
+
+<p>
+    @Html.ActionLink("Create New", "AddOrEdit", "User")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.LoginID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RoleType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Clap)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Carrier)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TL)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.LoginID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RoleType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Clap)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Carrier)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TL)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "AddOrEdit", new { id=item.LoginID  }) |
+            @Html.ActionLink("Delete", "Delete", new {  id=item.LoginID  })
+        </td>
+    </tr>
+}
+
+</table>
