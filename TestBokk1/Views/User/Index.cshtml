@@ -1,5 +1,11 @@
 ﻿@model IEnumerable<TestBokk1.Models.User>
+@{
 
+    if (Session["userID"] == null)
+    {
+        Response.Redirect("~/Login/Index");
+    }
+}
 @{
     ViewBag.Title = "Index";
 }
@@ -35,34 +41,35 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.LoginID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UserName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Password)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RoleType)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Clap)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Carrier)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TL)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "AddOrEdit", new { id=item.LoginID  }) |
-            @Html.ActionLink("Delete", "Delete", new {  id=item.LoginID  })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LoginID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RoleType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Clap)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Carrier)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TL)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "AddOrEdit", new { id = item.LoginID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.LoginID })
+            </td>
+        </tr>
+    }
 
 </table>

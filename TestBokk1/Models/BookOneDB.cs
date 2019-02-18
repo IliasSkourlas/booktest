@@ -14,10 +14,19 @@ namespace TestBokk1.Models //Why the interface here
     public class BookOneDB
     {
 
-
-        private static string _connectionString = Properties.Settings.Default._connectionString;
+        
+        public static string _connectionString = Properties.Settings.Default._connectionString;
         
 
+
+        //public static void Login()
+        //{
+        //    using (SqlConnection sqlCon = new SqlConnection(BookOneDB._connectionString))
+        //    {
+        //        sqlCon.Open();
+        //        sqlCon.Ex
+        //    }
+        //}
 
         public static void ExecuteWithoutReturn(string procedureName, DynamicParameters param = null)
         {

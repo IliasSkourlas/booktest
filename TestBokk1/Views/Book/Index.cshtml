@@ -1,4 +1,14 @@
-﻿@model IEnumerable<TestBokk1.Models.Book>
+﻿
+@{
+    
+    if (Session["userID"] == null)
+    {
+        Response.Redirect("~/Login/Index");
+    }
+}
+
+
+@model IEnumerable<TestBokk1.Models.Book>
 
 <p>
     @Html.ActionLink("Create New", "AddOrEdit", "Book")
@@ -39,52 +49,53 @@
         <th>
             @Html.DisplayNameFor(model => model.Receive)
         </th>
-       
+
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.BookID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Author)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DateOfLastMove)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Words)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.OwnerLoginID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CarrierLoginID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BookStatus)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Circulation)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Sent)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Receive)
-        </td>
-        
-        <td>
-            @Html.ActionLink("Edit", "AddOrEdit", new { id = item.BookID }) |
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Author)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfLastMove)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Words)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OwnerLoginID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CarrierLoginID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Circulation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sent)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Receive)
+            </td>
 
-            @Html.ActionLink("Delete", "Delete", new { id = item.BookID })
-        </td>
-    </tr>
-}
+            <td>
+                @Html.ActionLink("Edit", "AddOrEdit", new { id = item.BookID }) |
+
+                @Html.ActionLink("Delete", "Delete", new { id = item.BookID })
+            </td>
+        </tr>
+    }
 
 </table>
