@@ -24,7 +24,8 @@ namespace TestBokk1.Controllers
             DynamicParameters param = new DynamicParameters();
             param.Add("@UserName", userModel.UserName);
             param.Add("@Password", userModel.Password);
-            var userDetails= BookOneDB.ReturnList<LoginAccount>("sp_LoginMVC", param).FirstOrDefault<LoginAccount>();
+
+            var userDetails = BookOneDB.ReturnList<LoginAccount>("sp_LoginMVC", param).FirstOrDefault<LoginAccount>();
 
             if (userDetails == null)
             {
@@ -35,6 +36,9 @@ namespace TestBokk1.Controllers
             {
                 Session["userID"] = userDetails.LoginID;
                 Session["userName"] = userDetails.UserName;
+                Session["roleType"] = userDetails.RoleType;
+                LoginAccount.ThisRoleType = userDetails.RoleType;
+                LoginAccount.MyID = userDetails.LoginID;
 
                 return RedirectToAction("Index", "Home");
             }          

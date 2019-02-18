@@ -9,7 +9,7 @@ namespace TestBokk1.Models
 {
     public partial class LoginAccount
     {
-        public string LoginID { get; set; }
+        public int LoginID { get; set; }
 
         [DisplayName("User Name")]
         [Required(ErrorMessage = "This is required.")]
@@ -19,7 +19,18 @@ namespace TestBokk1.Models
         [Required(ErrorMessage ="This is required.")]
         public string Password { get; set; }
 
+        public int RoleType { get; set; }
+
         public string LoginErrorMessage { get; set; }
+
+        public static int MyID
+        {
+            get; set;
+        }
+        public static int ThisRoleType
+        {
+            get; set;
+        }
 
 
         public LoginAccount()
