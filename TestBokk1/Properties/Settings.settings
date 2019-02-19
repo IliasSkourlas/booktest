@@ -8,5 +8,8 @@
     <Setting Name="_connectionStringWeb" Type="System.String" Scope="Application">
       <Value Profile="(Default)">Data Source=den1.mssql8.gear.host;Initial Catalog=mybooks;Persist Security Info=True;User ID=mybooks;Password=kalhspera1@</Value>
     </Setting>
+    <Setting Name="_connectionStringWebMVC" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Data Source=den1.mssql7.gear.host;Initial Catalog=bookoneweb;Persist Security Info=True;User ID=bookoneweb;Password=kalhspera1@</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

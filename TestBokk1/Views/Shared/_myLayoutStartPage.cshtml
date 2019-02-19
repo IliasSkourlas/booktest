@@ -23,19 +23,10 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("All Books info", "Index", "Book")</li>
-                    <li>@Html.ActionLink("My Books", "Index", "MyBook")</li>
-                    <li>@Html.ActionLink("My Hand", "Index", "MyHand")</li>
-
-
-                    @if (TestBokk1.Models.LoginAccount.ThisRoleType == 1)
-                    {
-                        <li>@Html.ActionLink("Users", "Index", "User")</li>
-                    }
-                    <li>@Html.ActionLink("Book Pool", "Index", "PoolBook")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("LogOut", "LogOut", "Login")</li>
+                                                                           
+                    <li>@Html.ActionLink("About", "AboutStartUpPage", "Login")</li>
+                    <li>@Html.ActionLink("Contact", "ContactStartUpPage", "Login")</li>
+                   
                 </ul>
             </div>
         </div>
@@ -44,7 +35,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - BookOne Application</p>
+            
         </footer>
     </div>
 

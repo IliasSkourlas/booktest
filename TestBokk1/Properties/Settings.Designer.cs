@@ -42,5 +42,15 @@ namespace TestBokk1.Properties {
                 return ((string)(this["_connectionStringWeb"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=den1.mssql7.gear.host;Initial Catalog=bookoneweb;Persist Security Inf" +
+            "o=True;User ID=bookoneweb;Password=kalhspera1@")]
+        public string _connectionStringWebMVC {
+            get {
+                return ((string)(this["_connectionStringWebMVC"]));
+            }
+        }
     }
 }

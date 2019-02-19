@@ -14,10 +14,29 @@ namespace TestBokk1.Controllers
         // GET: Login
         public ActionResult Index()
         {
-            return View();
+            
+            return View("Index", "_myLayoutStartPage");
         }
 
-        
+        public ActionResult AboutStartUpPage()
+        {
+            ViewBag.Message = "Welcome. This is an app for searing your books with your friends. Not digital books, but your physical books. " +
+                "It helps you to keep track with their whereabouts, as they are seared from a pool of carriers that you choose. " +
+                "Read and write reviews and decide to give or not a Clap, when they are returned back to you in perfect condition. " +
+                "So...explore and have fun...and don't hesitate searing!";
+
+
+            return View("AboutStartUpPage", "_myLayoutStartPage");
+        }
+
+        public ActionResult ContactStartUpPage()
+        {
+            ViewBag.Message = "Uncertified Play Team - One";
+
+
+            return View("ContactStartUpPage", "_myLayoutStartPage");
+        }
+
         public ActionResult Autherize(TestBokk1.Models.LoginAccount userModel)
         {
            
@@ -50,9 +69,5 @@ namespace TestBokk1.Controllers
             Session.Abandon();
             return RedirectToAction("Index", "Login");
         }
-
-        
-
-
     }
-}
+ }

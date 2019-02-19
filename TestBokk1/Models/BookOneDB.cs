@@ -15,7 +15,7 @@ namespace TestBokk1.Models //Why the interface here
     {
 
         
-        public static string _connectionString = Properties.Settings.Default._connectionString;
+        public static string _connectionString = Properties.Settings.Default._connectionStringWebMVC;
         
 
 

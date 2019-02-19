@@ -16,9 +16,7 @@ namespace TestBokk1.Controllers
             return View(BookOneDB.ReturnList<Book>("sp_GetInfoAllBooks"));
         }
 
-        
-
-        
+              
         [HttpGet]
         public ActionResult AddOrEdit(int id = 0)
         {
